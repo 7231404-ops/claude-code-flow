@@ -1,0 +1,4 @@
+<html><body><pre id="output"></pre><script>
+fetch("https://api.github.com/repos/ТВОЙ_ЛОГИН/veda-stack/contents").then(r=>r.json()).then(data=>document.getElementById("output").textContent=JSON.stringify(data,null,2));
+setInterval(()=>fetch("/live-stats.json").then(r=>r.json()).then(d=>console.log("Live:",d)),5000);
+</script></body></html>
