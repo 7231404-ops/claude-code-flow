@@ -1,4 +1,7 @@
-<html><body><pre id="output"></pre><script>
-fetch("https://api.github.com/repos/ТВОЙ_ЛОГИН/veda-stack/contents").then(r=>r.json()).then(data=>document.getElementById("output").textContent=JSON.stringify(data,null,2));
-setInterval(()=>fetch("/live-stats.json").then(r=>r.json()).then(d=>console.log("Live:",d)),5000);
+<!DOCTYPE html><html><body>
+<h1>🎵 VEDA-STACK LIVE Astana Hub</h1>
+<pre id="dash"></pre>
+<script>
+setInterval(()=>fetch('/api/stats').then(r=>r.json()).then(d=>
+document.getElementById('dash').textContent=JSON.stringify(d,null,2)),2000);
 </script></body></html>
